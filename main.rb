@@ -1,6 +1,9 @@
 require_relative 'lib/helper'
 require_relative 'lib/number1'
 require_relative 'lib/number2'
+require_relative 'lib/number3'
+require_relative 'lib/number4'
+require_relative 'lib/number5'
 
 
 require_relative 'lib/parser'
@@ -19,14 +22,13 @@ module Squilliam
       break unless input != "6"
       puts ""
 
-      puts load_dictionary
-
       case input.to_i
       when 1
         Number1::run!
       when 2
         Number2::run!
-      when 3..5
+      when 4
+        Number4::run!
       else
         puts "Error: Invalid Input"
       end

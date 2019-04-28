@@ -17,11 +17,14 @@ module Squilliam
         else
           data = line.split ";"
           attributes = data[1].split ","
+          for attr in attributes
+            attr.upcase!
+          end
           r = data[2].split[1]
           n = data[3].split[1]
           v = data[4].split[1]
           tables.push ({
-                         title: data[0],
+                         title: data[0].upcase,
                          attributes: attributes,
                          r: r.to_i,
                          n: n.to_i,
