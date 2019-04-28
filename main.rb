@@ -27,6 +27,8 @@ module Squilliam
         Number1::run!
       when 2
         Number2::run!
+      when 3
+        Number3::run!
       when 4
         Number4::run!
       when 5

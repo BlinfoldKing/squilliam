@@ -16,7 +16,7 @@ module Squilliam
       puts "Output:"
       res = 0
       tables.each do |item|
-          if item[:title] === tableSearch
+          if item[:title].casecmp?(tableSearch)
               break
           end
           res+=1
