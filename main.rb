@@ -2,6 +2,9 @@ require_relative 'lib/helper'
 require_relative 'lib/number1'
 require_relative 'lib/number2'
 
+
+require_relative 'lib/parser'
+
 module Squilliam
   def self.run!
     loop do
@@ -15,6 +18,10 @@ module Squilliam
       input = read_input
       break unless input != "6"
       puts ""
+
+      input = read_input
+      parser  = Parser.new input
+      puts parser.parse
 
       case input.to_i
       when 1
