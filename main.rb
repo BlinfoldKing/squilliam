@@ -14,14 +14,12 @@ module Squilliam
       puts "4. Tampilkan QEP dan Cost"
       puts "5. Tampilkan Isi File Shared Pool"
       puts "6. exit"
-      print "=>"
+      print "Input =>"
       input = read_input
       break unless input != "6"
       puts ""
 
-      input = read_input
-      parser  = Parser.new input
-      puts parser.parse
+      puts load_dictionary
 
       case input.to_i
       when 1
