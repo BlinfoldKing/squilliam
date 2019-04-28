@@ -19,16 +19,18 @@ module Squilliam
           if item[:title].casecmp?(tableSearch)
               break
           end
-          res+=1
+          if res < tables.size-1
+            res+=1
+          end
       end
       
       bfr = (dict[:b]/Float(tables[res][:r])).floor
       fanout = (dict[:b]/Float(tables[res][:v]+dict[:p])).floor
       withIndex = (recordSearch/fanout).ceil
-      withoutIndex = (recordSearch/bfr).ceil
+      withoutIndex = (recordSearch/bfr).ceil + 1
 
       puts '>> Menggunakan indeks, jumlah blok yang diakses : ' + withIndex.to_s + ' blok'
-      puts '>> Tanpa indeks, jumlah blok yang diakses : ' + withIndex.to_s + ' blok' 
+      puts '>> Tanpa indeks, jumlah blok yang diakses : ' + withoutIndex.to_s + ' blok' 
     end
   end
 end
