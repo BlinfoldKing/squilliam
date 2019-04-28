@@ -1,0 +1,4 @@
+P 4;B 8192#
+Penulis;kode_penulis,nama,tanggal_lahir,alamat,no_hp,email; R 128;  n 10; V 6 #
+Menulis;kode_penulis,no_buku,tahun_terbit; R 8; n 10; V 6 #
+Buku;no_buku,penerbit,judul; R 10; n 10; V 6 #
