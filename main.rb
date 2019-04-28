@@ -1,5 +1,6 @@
 require_relative 'lib/helper'
-require_relative 'lib/parser'
+require_relative 'lib/number1'
+require_relative 'lib/number2'
 
 module Squilliam
   def self.run!
@@ -17,10 +18,10 @@ module Squilliam
 
       case input.to_i
       when 1
-        parser = Parser.new read_input
-        puts parser.parse
-      when 2..5
-        puts "hello world"
+        Number1::run!
+      when 2
+        Number2::run!
+      when 3..5
       else
         puts "Error: Invalid Input"
       end
