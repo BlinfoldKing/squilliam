@@ -139,12 +139,6 @@ module Squilliam
         puts "Optimal QEP : QEP #1"
         result = qep_result[0]
       end
-
-      File.open('sharedpool.txt', 'a') do |file|
-        file.write("Query: #{query}\n")
-        file.write(result)
-        file.write("\n")
-      end
     end
   end
 end
