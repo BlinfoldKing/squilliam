@@ -3,7 +3,16 @@ require_relative 'helper';
 module Squilliam
   class Number1
     def self.run!
-      # write implementation here
+      dict = Squilliam::load_dictionary
+      tables = dict[:tables]
+
+      tables.each do |item|
+        bfr = (dict[:b]/Float(item[:r])).floor
+        fanout = (dict[:b]/Float(item[:v]+dict[:p])).floor
+        puts 'BFR ' + item[:title] + ' : ' + bfr.to_s
+        puts 'Fan Out Ratio ' + item[:title] + ' : ' + fanout.to_s
+      end
+
     end
   end
 end
