@@ -9,6 +9,7 @@ module Squilliam
       puts "3. Tampilkan Jumlah Blok yang diakses untuk pencarian Record"
       puts "4. Tampilkan QEP dan Cost"
       puts "5. Tampilkan Isi File Shared Pool"
+      puts "6. exit"
       print "=>"
       input = read_input
       break unless input != "6"
