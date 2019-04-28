@@ -38,6 +38,7 @@ module Squilliam
       current_offset = from_offset + 2
 
       join = []
+      using = []
 
       if query[current_offset] == "JOIN"
         if current_offset >= query.length
@@ -45,6 +46,16 @@ module Squilliam
         end
         join.push query[current_offset + 1]
         current_offset += 2
+
+        if query[current_offset] == "USING"
+          if current_offset >= query.length
+            return { error: "Missing USING KEY Statement"}
+          end
+          using.push query[current_offset + 1]
+          current_offset += 2
+        else
+          return { error: "Missing USING Statement"}
+        end
       end
 
       if query[current_offset] == "JOIN"
@@ -53,6 +64,16 @@ module Squilliam
         end
         join.push query[current_offset + 1]
         current_offset += 2
+
+        if query[current_offset] == "USING"
+          if current_offset >= query.length
+            return { error: "Missing USING KEY Statement"}
+          end
+          using.push query[current_offset + 1]
+          current_offset += 2
+        else
+          return { error: "Missing USING Statement"}
+        end
       end
 
       where = ""
@@ -72,6 +93,7 @@ module Squilliam
         columns: columns,
         table: table,
         join: join,
+        use: using,
         where: where
       }
 

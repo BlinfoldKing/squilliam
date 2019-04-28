@@ -5,7 +5,7 @@ module Squilliam
   class Number4
     def self.run!
       puts "Input Query"
-      print ">>"
+      print ">> "
       query = Squilliam::read_input
       parser = Parser.new query
 
