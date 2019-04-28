@@ -4,8 +4,8 @@ module Squilliam
   class Number2
     def self.run(p, b, tables)
       tables.each do |item|
-        bfr = (b/item["r"]).floor
-        fanout = (b/(item["v"]+p)).floor
+        bfr = (b/Float(item["r"])).floor
+        fanout = (b/Float(item["v"]+p)).floor
         table = (item["n"]/bfr).ceil
         index = (item["n"]/fanout).ceil
         puts 'Tabel Data ' + item["title"] + ' : ' + table.to_s + ' blok'
