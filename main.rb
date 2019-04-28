@@ -1,10 +1,7 @@
+require_relative 'lib/helper'
 require_relative 'lib/parser'
 
 module Squilliam
-  def self.read_input
-    return gets.chomp
-  end
-
   def self.run!
     loop do
       puts "1. Tampilkan BFR dan Fanout Ratio Setiap Tabel"
