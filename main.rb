@@ -1,3 +1,5 @@
+require_relative 'lib/parser'
+
 module Squilliam
   def self.read_input
     return gets.chomp
@@ -15,9 +17,10 @@ module Squilliam
       break unless input != "6"
       puts ""
 
-      case input
+      case input.to_i
       when 1
-        puts "hello world"
+        parser = Parser.new read_input
+        puts parser.parse
       when 2..5
         puts "hello world"
       else
