@@ -14,22 +14,22 @@ module Squilliam
 
       data = parser.parse
 
-      columns = []
+      columns = {}
       for table in tables
         if table[:title] == data[:table]
           if data[:columns][0] == "*"
-            columns.push table[:attributes]
+            columns[table[:title]] = table[:attributes]
           else
-            columns.push data[:columns]&table[:attributes]
+            columns[table[:title]] = data[:columns]&table[:attributes]
           end
         end
 
         for join in data[:join]
           if table[:title] == join
             if data[:columns][0] == "*"
-              columns.push table[:attributes]
+              columns[table[:title]] = table[:attributes]
             else
-              columns.push data[:columns]&table[:attributes]
+              columns[table[:title]] = data[:columns]&table[:attributes]
             end
           end
         end
@@ -37,10 +37,10 @@ module Squilliam
 
       puts "Output"
       puts ">> Tabel (1) : #{data[:table]}"
-      puts "   List Kolom: #{columns[0].join ','}"
+      puts "   List Kolom: #{columns[data[:table]].join ','}"
       for i in 0..data[:join].length-1
         puts "   Table (#{i + 2}) : #{data[:join][i]}"
-        puts "   List Kolom: #{columns[i + 1].join ','}"
+        puts "   List Kolom: #{columns[data[:join][i]].join ','}"
       end
     end
   end
