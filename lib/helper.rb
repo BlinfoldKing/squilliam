@@ -12,8 +12,10 @@ module Squilliam
         if index == 0
           line = line.tr "#", ""
           line = line.split ";"
-          p = line[0][1]
-          b = line[1][1]
+          p = line[0].split
+          p = p[1]
+          b = line[1].split
+          b = b[1]
         else
           data = line.split ";"
           attributes = data[1].split ","
