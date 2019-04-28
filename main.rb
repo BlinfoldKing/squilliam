@@ -29,6 +29,8 @@ module Squilliam
         Number2::run!
       when 4
         Number4::run!
+      when 5
+        Number5::run!
       else
         puts "Error: Invalid Input"
       end
