@@ -26,11 +26,12 @@ module Squilliam
       
       bfr = (dict[:b]/Float(tables[res][:r])).floor
       fanout = (dict[:b]/Float(tables[res][:v]+dict[:p])).floor
-      withIndex = (recordSearch/fanout).ceil
-      withoutIndex = (recordSearch/bfr).ceil + 1
+      withIndex = (recordSearch/Float(fanout)).ceil + 1
+      withoutIndex = (recordSearch/Float(bfr)).ceil
 
       puts '>> Menggunakan indeks, jumlah blok yang diakses : ' + withIndex.to_s + ' blok'
-      puts '>> Tanpa indeks, jumlah blok yang diakses : ' + withoutIndex.to_s + ' blok' 
+      puts '>> Tanpa indeks, jumlah blok yang diakses : ' + withoutIndex.to_s + ' blok'
+      puts
     end
   end
 end

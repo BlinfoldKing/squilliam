@@ -12,6 +12,7 @@ module Squilliam
         puts 'BFR ' + item[:title] + ' : ' + bfr.to_s
         puts 'Fan Out Ratio ' + item[:title] + ' : ' + fanout.to_s
       end
+      puts
 
     end
   end
