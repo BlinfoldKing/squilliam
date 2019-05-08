@@ -1,2 +1,9 @@
-# squilliam
-https://github.com/BlinfoldKing/Tequila the sequel; BUTUH NILAI A
+# Squilliam
+![muehuehue](squilliam.jpeg)  
+saya butuh nilai A ;>
+
+
+## How to run
+```
+ruby main.rb
+```
