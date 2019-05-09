@@ -1,5 +1,8 @@
 require_relative 'helper';
 
+# Calculate block by record (with index) = ceil(n/Fanout Ratio)+1
+# Calculate block by record (without index) = ceil(n/BFr)
+
 module Squilliam
   class Number3
     def self.run!

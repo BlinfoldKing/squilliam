@@ -1,5 +1,8 @@
 require_relative 'helper';
 
+# Block Data = ceil(n/BFr)
+# Block Index = ceil(n/Fanout Ratio)
+
 module Squilliam
   class Number2
     def self.run!

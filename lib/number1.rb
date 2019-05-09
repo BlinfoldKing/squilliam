@@ -1,5 +1,8 @@
 require_relative 'helper';
 
+# BFr = floor(B/R)
+# Fanout Ratio = floor(B/v+p)
+
 module Squilliam
   class Number1
     def self.run!
